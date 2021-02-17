@@ -1,0 +1,16 @@
+#add_header 'Access-Control-Allow-Origin' "*" always;
+add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, PATCH, DELETE, OPTIONS' always;
+add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modifie$
+
+if ($request_method = "OPTIONS") {
+   access_log off;
+   add_header 'Access-Control-Allow-Origin' "*" always;
+   add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, PATCH, DELETE, OPTIONS' always;
+   add_header 'Access-Control-Allow-Headers' 'Accept,Authorization,Cache-Control,Content-Type,DNT,If-Modi$
+   add_header 'Access-Control-Max-Age' 1728000;
+   add_header 'Content-Type' 'text/plain; charset=utf-8';
+   add_header 'Content-Length' 0;
+   more_set_headers "Access-Control-Max-Age" 1728000;
+   expires 1d;
+   return 204;
+}
